@@ -1,0 +1,14 @@
+
+Comment: 	formal test run
+Date: 26-Sep-2019
+Time: 13:55
+Chosen figure: TLC.png
+Processed figure: TLCgs.bmp 
+Run: TLCRun1.bmp 
+Converted to chromatogram1.pdf 
+Pick	Area 		Rf 
+1		42.4874		0.89947		
+2		20.7567		0.75132		
+3		22.5137		0.56614		
+4		7.326		0.31746		
+5		6.9162		0.22751		
