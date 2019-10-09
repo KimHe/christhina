@@ -55,9 +55,9 @@ function christhina
 
             y = grayScale(range);
 
-            grad = ((y(1) - y(end)) / (peakGrid(k) - peakGrid(k+1)));
+            grad = ( y(1) - y(end) ) / ( peakGrid(k) - peakGrid(k+1) );
 
-            ord = y(end) - (grad * peakGrid(k+1));
+            ord = y(end) - grad * peakGrid(k+1);
 
             y1 = grad * x + ord;
 
@@ -83,8 +83,8 @@ function christhina
 
         dataWrite(j, pixels, grayScale, output);
 
-        iterative = questdlg('Do you want to realize another run?', ...
-            'TLC analysis','OK','No',opts);
+        iterative = questdlg('Do you want to run repeatedly?', ...
+            'TLC analysis', 'Yes', 'No', 'Yes');
 
     end
 
@@ -121,7 +121,7 @@ function imgTLC = imgPreProcess
     imshow(imgRaw);
 
     opts.Interpreter = 'latex';
-    opts.Default = 'OK';
+    opts.Default = 'Yes';
 
     while strcmp(rotate, 'No') == 1
 
