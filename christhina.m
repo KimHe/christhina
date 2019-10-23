@@ -61,7 +61,8 @@ function christhina
 
             y1 = grad * x + ord;
 
-            areas(i) = trapz(x, y) - trapz(x, y1);
+            %areas(i) = trapz(x, y) - trapz(x, y1);
+            areas(i) = trapz(x, y);
 
             [yMax, idx] = max(grayScale(range));
 
@@ -195,10 +196,10 @@ function dataWrite(j, pixels, grayScale, output)
 
     global fileName;
 
-    chroma = [pixels, grayScale];
+    chroma = [pixels', grayScale'];
 
     str = sprintf(['chromatogram' num2str(j) '.dat']);
-    save(str, '-ascii', '-append', '-double', '-tabs');
+    save(str, 'chroma', '-ascii', '-tabs');
 
     print('-f2','-dpdf','chromatogram');
     movefile('chromatogram.pdf', ['chromatogram' num2str(j) '.pdf']);
